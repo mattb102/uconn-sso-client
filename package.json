@@ -1,0 +1,20 @@
+{
+  "name": "uconn-sso-client",
+  "version": "1.0.1",
+  "description": "A simple SSO client to interact with UCONN's CAS server to sign in with NetID in your webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "UCONN",
+    "CAS",
+    "SSO"
+  ],
+  "author": "Matt Beauvais",
+  "license": "ISC",
+  "dependencies": {
+    "build-url": "^6.0.1",
+    "xml2js": "^0.6.2"
+  }
+}
