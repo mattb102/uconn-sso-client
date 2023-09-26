@@ -39,7 +39,7 @@ useEffect(() => {
 
 # Notes
 
-This is still a very early version, so I will work to improve this to make it easier to use. I am also open to any PR's
+This is still a very early version, so I will work to improve this to make it easier to use and also better handle any sort of failures. I am also open to any PR's
 
 # Resources
 
