@@ -26,7 +26,7 @@ casClient.auth()
 })
 ```
 
-You wil need to run the auth function twice. The second time should be run after the redirect when the ticket and service and supplied in your URL. An example of this is with a useEffect in react:
+You wil need to run the auth function twice. The first call to auth will redirect the user to the NetID sign in page to enter their credentials (or, if the person already has signed into NetID before, this will be skipped). They will then be redirected back to your app with a service and ticket parameter in the url. The second time should be run after the redirect when the ticket and service and supplied in your URL, this time the function will validate the ticket with UCONN's server. An example of this is with a useEffect in react to automatically run the function again if the ticket and service params are supplied on whatever page you handle logging in on:
 ```js
 useEffect(() => {
     // code to run after render goes here
