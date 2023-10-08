@@ -1,6 +1,5 @@
-const xml2js = require('xml2js');
-const util = require('./util');
-const urls = require('./url');
+import util from './util';
+import urls from './url';
 
 class UconnCasClient {
   constructor() {
