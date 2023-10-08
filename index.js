@@ -1,5 +1,5 @@
-import util from './util';
-import urls from './url';
+import util from './util.js';
+import urls from './url.js';
 
 class UconnCasClient {
   constructor() {
