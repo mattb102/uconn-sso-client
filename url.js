@@ -1,5 +1,6 @@
-const buildUrl = require('build-url');
-const util = require('./util');
+import buildUrl from 'build-url';
+import util from './util.js';
+
 
 const getLoginUrl = (cas) => {
   let baseUrl = _getCasBaseUrl(cas);
@@ -38,5 +39,5 @@ const _getCasBaseUrl = (cas) => {
     return 'https://' + cas.endpoint + cas.path;
 };
 
-export { getLoginUrl, getValidateUrl };
+export default { getLoginUrl, getValidateUrl };
 

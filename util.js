@@ -23,7 +23,7 @@ const isParamExistsInUrl = (url, param) => {
   return value !== null;
 };
 
-export {
+export default {
   isEmpty,
   getCurrentUrl,
   getParamFromCurrentUrl,
