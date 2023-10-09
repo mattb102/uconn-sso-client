@@ -26,7 +26,6 @@ class UconnCasClient {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        let env = 'prod'
         const parser = new DOMParser();
         const xml = parser.parseFromString(xhr.responseText, 'text/xml');
         const netID = xml.childNodes[0].textContent.trim()
@@ -38,10 +37,11 @@ class UconnCasClient {
           reject
      }  
     }
+    let environment = 'prod'
     if (util.getCurrentUrl().includes('localhost')) {
-      env = 'dev'
+      let environment = 'dev'
     }
-    xhr.open('GET', "https://6xqpeg7i0j.execute-api.us-east-2.amazonaws.com/default/test2?ticket=" + ticket + "&env=" + env
+    xhr.open('GET', "https://6xqpeg7i0j.execute-api.us-east-2.amazonaws.com/default/test2?ticket=" + ticket + "&env=" + environment
     , true);
     xhr.send(); 
   }
