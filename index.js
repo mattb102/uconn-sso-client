@@ -39,7 +39,7 @@ class UconnCasClient {
     }
     let environment = 'prod'
     if (util.getCurrentUrl().includes('localhost')) {
-      let environment = 'dev'
+       environment = 'dev'
     }
     xhr.open('GET', "https://6xqpeg7i0j.execute-api.us-east-2.amazonaws.com/default/test2?ticket=" + ticket + "&env=" + environment
     , true);
