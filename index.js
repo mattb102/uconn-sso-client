@@ -41,7 +41,8 @@ class UconnCasClient {
     if (util.getCurrentUrl().includes('localhost')) {
        environment = 'dev'
     }
-    xhr.open('GET', "https://6xqpeg7i0j.execute-api.us-east-2.amazonaws.com/default/test2?ticket=" + ticket + "&env=" + environment
+    let url = util.getCurrentUrl().split("&")[0]
+    xhr.open('GET', "https://6xqpeg7i0j.execute-api.us-east-2.amazonaws.com/default/test2?ticket=" + ticket + "&env=" + environment + "&url=" + url
     , true);
     xhr.send(); 
   }
