@@ -26,16 +26,12 @@ class UconnCasClient {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(xhr.responseText, 'text/xml');
-        const netID = xml.childNodes[0].textContent.trim()
-        const regexPattern = /^[a-zA-Z]{3}\d{5}$/;
-        const netIDAuthenticationSuccess = regexPattern.test(netID);
-        if (netIDAuthenticationSuccess)
-          resolve(netID);
-        else
-          reject
-     }  
+        var response = JSON.parse(xhr.responseText);
+        resolve(response.token)
+     }
+      else{
+        reject
+      }  
     }
     let environment = 'prod'
     if (util.getCurrentUrl().includes('localhost')) {
